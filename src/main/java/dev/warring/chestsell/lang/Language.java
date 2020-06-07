@@ -1,6 +1,6 @@
 package dev.warring.chestsell.lang;
 
-import dev.warring.core.WarringCore;
+import dev.warring.chestsell.PremiumChestSell;
 import dev.warring.core.library.utils.ChatCenter;
 import dev.warring.core.library.utils.Utils;
 import org.bukkit.Bukkit;
@@ -240,11 +240,11 @@ public enum Language {
     }
 
     public void putToConfig() {
-        WarringCore.getInstance().getConfig().set("MESSAGES." + name() + ".ENABLED", isEnabled());
-        WarringCore.getInstance().getConfig().set("MESSAGES." + name() + ".CENTERED", isCentered());
-        WarringCore.getInstance().getConfig().set("MESSAGES." + name() + ".LINES", getMessage());
-        WarringCore.getInstance().saveConfig();
-        WarringCore.getInstance().reloadConfig();
+        PremiumChestSell.getInstance().getConfig().set("MESSAGES." + name() + ".ENABLED", isEnabled());
+        PremiumChestSell.getInstance().getConfig().set("MESSAGES." + name() + ".CENTERED", isCentered());
+        PremiumChestSell.getInstance().getConfig().set("MESSAGES." + name() + ".LINES", getMessage());
+        PremiumChestSell.getInstance().saveConfig();
+        PremiumChestSell.getInstance().reloadConfig();
     }
 
     public static void mapToConfig() {
@@ -254,13 +254,13 @@ public enum Language {
     }
 
     public static void pullFromConfig() {
-        if (WarringCore.getInstance().getConfig().getConfigurationSection("MESSAGES") == null) return;
-        for (String key : WarringCore.getInstance().getConfig().getConfigurationSection("MESSAGES").getValues(false).keySet()) {
+        if (PremiumChestSell.getInstance().getConfig().getConfigurationSection("MESSAGES") == null) return;
+        for (String key : PremiumChestSell.getInstance().getConfig().getConfigurationSection("MESSAGES").getValues(false).keySet()) {
             for (Language lang : Language.values()) {
                 if (lang.name().equalsIgnoreCase(key)) {
-                    lang.setEnabled(WarringCore.getInstance().getConfig().getBoolean("MESSAGES." + key + ".ENABLED"));
-                    lang.setCentered(WarringCore.getInstance().getConfig().getBoolean("MESSAGES." + key + ".CENTERED"));
-                    lang.setMessage(WarringCore.getInstance().getConfig().getStringList("MESSAGES." + key + ".LINES"));
+                    lang.setEnabled(PremiumChestSell.getInstance().getConfig().getBoolean("MESSAGES." + key + ".ENABLED"));
+                    lang.setCentered(PremiumChestSell.getInstance().getConfig().getBoolean("MESSAGES." + key + ".CENTERED"));
+                    lang.setMessage(PremiumChestSell.getInstance().getConfig().getStringList("MESSAGES." + key + ".LINES"));
                     break;
                 }
             }
