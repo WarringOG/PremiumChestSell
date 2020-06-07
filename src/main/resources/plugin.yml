@@ -2,4 +2,5 @@ name: PremiumChestSell
 version: ${project.version}
 main: dev.warring.chestsell.PremiumChestSell
 authors: [Warring]
+depend: [PremiumCore]
 description: Chest sell plugin
