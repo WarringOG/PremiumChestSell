@@ -1,0 +1,10 @@
+
+# The notification line is ChestSell
+SignLines:
+  - "&e[ChestSell]"
+  - "&7right click this"
+  - "&7to sell all the"
+  - "&7contents"
+
+Prices:
+  - "SUGAR_CANE;0;50"

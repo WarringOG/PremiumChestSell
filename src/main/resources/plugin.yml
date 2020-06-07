@@ -1,0 +1,5 @@
+name: PremiumChestSell
+version: ${project.version}
+main: dev.warring.chestsell.PremiumChestSell
+authors: [Warring]
+description: Chest sell plugin
